@@ -187,30 +187,62 @@
         }
 
         /* Badge TryHackMe Container */
+    .thm-badge-container {
+        background: linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(12, 29, 61, 0.5) 100%);
+        padding: 20px;
+        border-radius: 15px;
+        border: 2px solid rgba(96, 165, 250, 0.3);
+        box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2);
+        backdrop-filter: blur(10px);
+        text-align: center;
+        min-width: 350px;
+        transition: all 0.3s;
+    }
+
+    .thm-badge-container:hover {
+        border-color: #06b6d4;
+        box-shadow: 0 12px 40px rgba(6, 182, 212, 0.4);
+        transform: translateY(-5px);
+    }
+
+    .thm-badge-container h3 {
+        color: #60a5fa;
+        margin-bottom: 15px;
+        font-size: 1.1em;
+        text-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
+    }
+
+    .thm-badge-container iframe {
+        background: transparent;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Responsive pour le badge */
+    @media (max-width: 1024px) {
         .thm-badge-container {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(12, 29, 61, 0.5) 100%);
-            padding: 25px;
-            border-radius: 15px;
-            border: 2px solid rgba(96, 165, 250, 0.3);
-            box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2);
-            backdrop-filter: blur(10px);
-            text-align: center;
-            min-width: 280px;
-            transition: all 0.3s;
+            margin: 0 auto;
+            min-width: 330px;
         }
+    }
 
-        .thm-badge-container:hover {
-            border-color: #06b6d4;
-            box-shadow: 0 12px 40px rgba(6, 182, 212, 0.4);
-            transform: translateY(-5px);
+    @media (max-width: 768px) {
+        .thm-badge-container {
+            min-width: 100%;
+            width: 100%;
+            max-width: 350px;
         }
+    }
 
-        .thm-badge-container h3 {
-            color: #60a5fa;
-            margin-bottom: 15px;
-            font-size: 1.1em;
-            text-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
+    @media (max-width: 480px) {
+        .thm-badge-container {
+            padding: 15px;
         }
+        
+        .thm-badge-container iframe {
+            height: 90px;
+        }
+    }
 
         .section {
             background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(12, 29, 61, 0.3) 100%);
@@ -740,7 +772,7 @@
             <div class="profile-section">
                 <div class="profile-main">
                     <!-- Replace with your photo -->
-                    <img src="cvphoto.JPEG" alt="Ayoub Moustaine" class="profile-img">
+                    <img src="https://via.placeholder.com/200" alt="Ayoub Moustaine" class="profile-img">
                     
                     <div class="profile-info">
                         <h1>Ayoub Moustaine</h1>
@@ -752,11 +784,11 @@
                 <!-- TryHackMe Badge -->
                 <div class="thm-badge-container">
                     <h3>🏆 TryHackMe Stats</h3>
-                    <!-- Replace YOUR_USERNAME with your TryHackMe username -->
-                    <script src="https://tryhackme.com/badge/YOUR_USERNAME"></script>
-                    <!-- Alternative: use image badge if script doesn't work -->
-                    <!-- <img src="https://tryhackme-badges.s3.amazonaws.com/YOUR_USERNAME.png" 
-                         alt="TryHackMe Badge" style="max-width: 100%; border-radius: 10px;"> -->
+                    <iframe 
+                        src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=6047473" 
+                        style="border:none; width: 100%; height: 100px; border-radius: 10px;"
+                        title="TryHackMe Badge">
+                    </iframe>
                 </div>
             </div>
         </div>
