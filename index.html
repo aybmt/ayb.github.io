@@ -218,6 +218,21 @@
         margin: 0 auto;
     }
 
+        /* Ajoutez ceci dans votre section <style> */
+    .thm-badge-container iframe {
+        background: transparent;
+        display: block;
+        margin: 0 auto;
+        overflow: hidden !important;
+        scrolling: no;
+    }
+
+    /* Cache les scrollbars dans l'iframe */
+    .thm-badge-container iframe::-webkit-scrollbar {
+        display: none;
+    }
+
+
     /* Responsive pour le badge */
     @media (max-width: 1024px) {
         .thm-badge-container {
@@ -323,7 +338,7 @@
             flex-wrap: wrap;
         }
 
-        .cv-btn {
+        .cv-btnfra {
             background: linear-gradient(135deg, #2563eb 0%, #0891b2 100%);
             color: white;
             padding: 14px 30px;
@@ -338,7 +353,28 @@
             font-weight: 600;
         }
 
-        .cv-btn:hover {
+        .cv-btneng {
+            background: linear-gradient(135deg, #2563eb 0%, #0891b2 100%);
+            color: white;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(6, 182, 212, 0.5);
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+            font-weight: 600;
+        }
+
+        .cv-btneng:hover {
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            box-shadow: 0 6px 30px rgba(6, 182, 212, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .cv-btnfra:hover {
             background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
             box-shadow: 0 6px 30px rgba(6, 182, 212, 0.5);
             transform: translateY(-2px);
@@ -752,7 +788,7 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">🛡️ AM Security</div>
+            <div class="logo">🛡️ AM Security Portfolio</div>
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             <ul id="navMenu">
                 <li><a href="#about">About</a></li>
@@ -772,25 +808,26 @@
             <div class="profile-section">
                 <div class="profile-main">
                     <!-- Replace with your photo -->
-                    <img src="https://via.placeholder.com/200" alt="Ayoub Moustaine" class="profile-img">
+                    <img src="cv_photo.jpg" alt="Ayoub Moustaine" class="profile-img">
                     
                     <div class="profile-info">
                         <h1>Ayoub Moustaine</h1>
-                        <p class="subtitle">🔒 IT Security Administrator</p>
+                        <p class="subtitle">🔒 IT Security </p>
                         <p class="tagline">BTS Cybersecurity Student | Passionate about defensive security, system administration and IT infrastructure protection</p>
                     </div>
                 </div>
                 
-                <!-- TryHackMe Badge -->
-                <div class="thm-badge-container">
-                    <h3>🏆 TryHackMe Stats</h3>
-                    <iframe 
-                        src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=6047473" 
-                        style="border:none; width: 100%; height: 100px; border-radius: 10px;"
-                        title="TryHackMe Badge">
-                    </iframe>
-                </div>
-            </div>
+        <!-- Remplacez votre section TryHackMe Badge par celle-ci -->
+        <div class="thm-badge-container">
+            <h3>🏆 TryHackMe Stats</h3>
+            <iframe 
+                src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=6047473" 
+                style="border:none; width: 100%; height: 100px; border-radius: 10px; overflow: hidden;"
+                scrolling="no"
+                title="TryHackMe Badge">
+            </iframe>
+        </div>
+
         </div>
     </header>
 
@@ -800,11 +837,11 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Currently pursuing a BTS in Cybersecurity, I am a dedicated IT security enthusiast with hands-on experience in system administration and IT support. My passion lies in securing IT infrastructure and ensuring robust defensive security measures.</p>
-                    <p>Through my internship at CHRU Brabois and various university projects, I've developed strong skills in troubleshooting, network security, and system administration. I actively practice on TryHackMe to enhance my cybersecurity knowledge and stay updated with the latest security trends.</p>
+                    <p>Currently pursuing a BTS in Cybersecurity, I am a dedicated IT security student. My passion lies in securing IT infrastructure and ensuring robust defensive security measures.</p>
+                    <p>Through my scholarship and various university or personal projects, I have developed some skills in security, network, and system administration. I love to practice on TryHackMe to enhance my cybersecurity knowledge and stay updated with the latest security trends.</p>
                     <div class="cv-downloads">
-                        <a href="AyoubMoustaine_CV_ENG.pdf" download="AyoubMoustaine_CV_ENG" class="cv-btn">📄 CV English</a>
-                        <a href="#" class="cv-btn">📄 CV Français</a>
+                        <a href="AyoubMoustaine_CV_ENG.pdf" download="AyoubMoustaine_CV_ENG" class="cv-btneng">📄 CV English</a>
+                        <a href="AyoubMoustaine_CV_FRA.pdf" download="AyoubMoustaine_CV_FRA" class="cv-btnfra">📄 CV Français</a>
                     </div>
                 </div>
                 <div class="quick-info">
@@ -839,7 +876,7 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <h3>BTS Cybersecurity</h3>
-                    <p class="date">September 2025 - Present</p>
+                    <p class="date">September 2025 - Present | Esch-sur-Alzette, Luxembourg</p>
                     <p>Advanced technical training in cybersecurity, network security, system administration, and defensive security measures. Focus on securing IT infrastructure and incident response.</p>
                 </div>
                 <div class="timeline-item">
@@ -848,7 +885,7 @@
                     <p>Customer service, product consultation, and sales support. Developed strong communication and teamwork skills while managing customer relationships.</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>University Bachelor in IT</h3>
+                    <h3>1st year of University Bachelor in IT</h3>
                     <p class="date">September 2024 - June 2025 | IUT de Toulouse, France</p>
                     <p>Comprehensive IT education covering programming, database management, web development, and system administration. Strong foundation in computer science fundamentals.</p>
                 </div>
@@ -859,7 +896,7 @@
                 </div>
                 <div class="timeline-item">
                     <h3>General Baccalaureate</h3>
-                    <p class="date">September 2020 - June 2023 | Lycée Guillaume Kroll, Luxembourg & Lycée Français de Bruxelles, Belgium</p>
+                    <p class="date">September 2020 - June 2023 | Lycée Français de Bruxelles, Belgium & Institut La Vertu, Bruxelles </p>
                     <p>Strong academic foundation with focus on sciences and technology.</p>
                 </div>
             </div>
@@ -1008,7 +1045,7 @@
                     </div>
                 </div>
                 <div class="language-card">
-                    <h3>🇸🇦 Arabic</h3>
+                    <h3>🇸🇦 🇲🇦 Arabic</h3>
                     <p class="language-level">Advanced</p>
                     <div class="language-bar">
                         <div class="language-progress" style="width: 75%"></div>
@@ -1073,7 +1110,7 @@
                 <div class="contact-method">
                     <div class="contact-icon">📱</div>
                     <h3>Phone</h3>
-                    <a href="tel:+33780771334">+33 7 ** ** ** **</a>
+                    <a href="tel:+33 7 ** ** ** **">+33 7 ** ** ** **</a>
                 </div>
                 <div class="contact-method">
                     <div class="contact-icon">💼</div>
